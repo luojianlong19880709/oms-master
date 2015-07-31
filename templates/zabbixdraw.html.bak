@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>111</title>
+</head>
+<body>
+{% for png in pngs  %}
+<p>
+<a href="/monitor/drawall/?graphid={{ png.graphid }}">
+<img src="{{ png.pngpath }}" class="img-responsive" alt="Responsive image">
+</a>
+</p>
+{% endfor %}
+</body>
+</html>
+
+

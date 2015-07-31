@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block title %}OMS{% endblock %}
+{% block css %}
+<!-- DataTables-->
+<link rel="stylesheet" href="/static/plugins/dataTables/css/dataTables.css">
+{% endblock %}
+{% block content %}
+       <div class="row">
+            <div class="col-md-12">
+                <!--breadcrumbs start -->
+                <ul class="breadcrumb">
+                     <li><a href="{% url 'index' %}">Dashboard</a>
+                     </li>
+                     <li>资产管理</li>
+                      <li class="active">亦庄hadoop1.0主机列表</li>
+               </ul>
+               <!--breadcrumbs end -->
+               <h1 class="h1">亦庄hadoop1.0主机列表</h1>
+			<div>
+			
+			 </div>
+
+{% endblock %}
+

@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% block title %}OMS{% endblock %}
+{% block content %}
+       <div class="row">
+            <div class="col-md-12">
+               <!--breadcrumbs start -->
+               <ul class="breadcrumb">
+                     <li><a href="{% url 'index' %}">Dashboard</a>
+                     </li>
+                     <li>部署管理</li>
+                     <li class="active">赛尔hadoop远程管理</li>
+               </ul>
+               <!--breadcrumbs end -->
+               <h1 class="h1">命令执行</h1>
+            </div>
+       </div>
+
+       <div class="row">
+            <div class="col-md-12">
+                 <div class="panel panel-default">
+                      <div class="panel-body">
+                             <form class="form-horizontal form-border" method="post" enctype="multipart/form-data" action="/deploy/remote_execution_cer/?action=exec">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">目标主机</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" name="tgt" value={{ tgt }}>
+                                        </div>
+                                    </div>
+				    <div class="form-group">
+                                        <label class="col-sm-3 control-label">DataNode</label>
+                                        <div class="col-sm-6">
+                                         <button class="btn btn-info btn-sm" name="Dstart" >启动</button>
+                                         <button class="btn btn-danger btn-sm" name="Dstop" style="color:white" >停止</button>
+                                         <button class="btn btn-info btn-sm" name="Dstatus" >检测</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">TaskTracker</label>
+                                        <div class="col-sm-6">
+                                         <button class="btn btn-info btn-sm" name="Tstart" >启动</button>
+                                         <button class="btn btn-danger btn-sm" name="Tstop" style="color:white" >停止</button>
+                                         <button class="btn btn-info btn-sm" name="Tstatus" >检测</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                          <label class="col-sm-3 control-label">返回结果</label>
+                                          <div class="col-sm-6">
+                                               <textarea class="form-control">{{ ret }}</textarea>
+                                          </div>
+                                    </div>
+                             </form>
+                      </div>
+                 </div>
+            </div>
+       </div>
+       <!--row end-->
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block title %}OMS{% endblock %}
+{% block css %}
+<!-- DataTables-->
+<link rel="stylesheet" href="/static/plugins/dataTables/css/dataTables.css">
+{% endblock %}
+{% block content %}
+       <div class="row">
+            <div class="col-md-12">
+                <!--breadcrumbs start -->
+                <ul class="breadcrumb">
+                     <li><a href="{% url 'index' %}">Dashboard</a>
+                     </li>
+                     <li>监控管理</li>
+                      <li class="active">监控信息</li>
+               </ul>
+               <!--breadcrumbs end -->
+               <h1 class="h1">监控信息</h1>
+			   </div>
+				</div>
+{% for png in pngs  %}
+<p>
+<a href="/monitor/drawall/?graphid={{ png.graphid }}">
+<img src="{{ png.pngpath }}" class="img-responsive" alt="Responsive image">
+</a>
+</p>
+{% endfor %}
+{% endblock %}
+

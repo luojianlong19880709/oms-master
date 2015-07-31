@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>111</title>
+</head>
+<body>
+{% for i in typelist %}
+<div>
+    <a href="#{{i.type}}" data-toggle="collapse"><i class="glyphicon glyphicon-usd"></i>{{i.type}}</a>
+    <ul id="{{i.type}}" class="collapse">
+        {% for tmp in i.host %}
+        <li><a target="draw" href="/monitor/zabbixdraw/?type={{i.tflag}}&hostid={{tmp.hostid}}">{{tmp.hostname}}</a></li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endfor %}
+</body>
+</html>
+
+
